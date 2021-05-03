@@ -1,0 +1,12 @@
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  background-color: rgba(25,25,25,0.5);
+  box-shadow: 0 8px 16px 8px rgba(25,25,25,0.4);
+  border: 5px solid rgba(25, 25, 25, 0.1);
+  border-radius: 4px;
+}
+.show {display: block; z-index: 999;}
+#myCustomDropdown .t-Form-fieldContainer {padding:0!important;}
+#myCustomDropdown .t-Form-fieldContainer {padding-bottom: 5px !important;}
