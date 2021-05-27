@@ -24,6 +24,7 @@ const dropdownItems = function() {
       $("#myCustomDropdown").append($(`#${item}`));
     });
     $("#"+hookId).attr("onclick","dropdownItems.toggleDropdown()");
+    $("#"+hookId).find(".t-Button-label").addClass("custom");
     // Close the dropdown if the user clicks outside of it
     window.onclick = function(event) {
       if (!event.target.matches('.custom')) {
