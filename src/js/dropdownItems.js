@@ -3,8 +3,11 @@ const dropdownItems = function() {
   function init() {
     console.log("Init dropdown");
     let hookId = this.action.attribute01;
-    let dropdownItems = this.action.attribute02.split(',');
-    let dropdownOthers = this.action.attribute03.split(',');
+    let dropdownItemsList = this.action.attribute02;
+    let dropdownOthersList = this.action.attribute03;
+    let dropdownItems = [], dropdownOthers = [];
+    if (dropdownItemsList) dropdownItems = dropdownItemsList.split(',');
+    if (dropdownOthersList) dropdownOthers = dropdownOthersList.split(',');
     console.log({hookId, dropdownItems, dropdownOthers});
     $("#main").after(`<div id="myCustomDropdown" class="dropdown-content custom"></div>`);
     let height = $("#"+hookId).outerHeight();
