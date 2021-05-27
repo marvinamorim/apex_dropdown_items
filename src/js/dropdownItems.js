@@ -11,7 +11,7 @@ const dropdownItems = function() {
     console.log({hookId, dropdownItems, dropdownOthers});
     $("#main").after(`<div id="myCustomDropdown" class="dropdown-content custom"></div>`);
     let height = $("#"+hookId).outerHeight();
-    let top = $("#"+hookId).offset().top + height;
+    let top = $("#"+hookId).offset().top-15;
     let left = $("#"+hookId).offset().left-5;
     $("#myCustomDropdown").css("top", top+"px");
     $("#myCustomDropdown").css("left", left+"px");
