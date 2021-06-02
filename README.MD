@@ -17,4 +17,3 @@
 ## To-do
   * Create support for custom css configuration, like padding, background-color, offset for hooked position etc.
   * Create support for multiple dropdowns on the same page.
-  * Fix the dropdown hook position when using a colapsable lateral Navigation Menu.
