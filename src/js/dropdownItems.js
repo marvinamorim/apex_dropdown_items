@@ -9,12 +9,7 @@ const dropdownItems = function() {
     if (dropdownItemsList) dropdownItems = dropdownItemsList.split(',');
     if (dropdownOthersList) dropdownOthers = dropdownOthersList.split(',');
     console.log({hookId, dropdownItems, dropdownOthers});
-    $("#main").after(`<div id="myCustomDropdown" class="dropdown-content custom"></div>`);
-    let height = $("#"+hookId).outerHeight();
-    let top = $("#"+hookId).offset().top-15;
-    let left = $("#"+hookId).offset().left-5;
-    $("#myCustomDropdown").css("top", top+"px");
-    $("#myCustomDropdown").css("left", left+"px");
+    $("#wwvFlowForm").after(`<div id="myCustomDropdown" class="dropdown-content custom"></div>`);
     dropdownItems.map(function(item){
       $(`#${item}`).addClass("custom");
       $("#myCustomDropdown").append($(`#${item}_CONTAINER`));
@@ -23,7 +18,7 @@ const dropdownItems = function() {
       $(`#${item}`).addClass("custom");
       $("#myCustomDropdown").append($(`#${item}`));
     });
-    $("#"+hookId).attr("onclick","dropdownItems.toggleDropdown()");
+    $("#"+hookId).attr("onclick",`dropdownItems.toggleDropdown('${hookId}')`);
     $("#"+hookId).find(".t-Button-label").addClass("custom");
     // Close the dropdown if the user clicks outside of it
     window.onclick = function(event) {
@@ -33,7 +28,13 @@ const dropdownItems = function() {
       }
     }
   }
-  function toggleDropdown() {
+  function toggleDropdown(hookId) {
+    console.log(hookId);
+    let height = $("#"+hookId).outerHeight();
+    let top = $("#"+hookId).offset().top+height;
+    let left = $("#"+hookId).offset().left;
+    $("#myCustomDropdown").css("top", top+"px");
+    $("#myCustomDropdown").css("left", left+"px");
     document.getElementById("myCustomDropdown").classList.toggle("show");
   }
   return {
